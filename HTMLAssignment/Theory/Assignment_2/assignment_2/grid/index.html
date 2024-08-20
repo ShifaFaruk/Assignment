@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .main {
+            display: flex;
+            width: 100%;
+
+        }
+
+        .sub {
+            text-align: right;
+            margin-top: 10px;
+            width: 200px;
+        
+        }
+
+        .sub h5,
+        .sub h3 {
+            padding: 10px;
+        }
+
+        .grid-path {
+            width: 90%;
+            height: 620px;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            text-align: center;
+            font-size: 50px;
+            gap: 10px;
+
+
+        }
+
+
+
+        .grid-1 {
+            grid-column: 1 / span 4;
+            grid-row: 1;
+            background: url(img1.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .grid-2 {
+
+            grid-column: 5/span 2;
+            background: url(img2.jpeg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .grid-3 {
+            grid-column: 1/span;
+            background: url(img3.jfif);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .grid-4 {
+            grid-column: 2/span 4;
+            background: url(img4.jpg);
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .grid-5 {
+            background: url(img5.jfif);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .grid-6 {
+            grid-column: 1/span 3;
+            background: url(img6.avif);
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .grid-7 {
+            grid-column: 4 /span 3;
+            background: url(img7.jfif);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .grid-8 {
+            grid-column: 1 /span 2;
+            background: url(img8.jfif);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .grid-9 {
+            grid-column: 3/span 2;
+            background: url(img9.avif);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .grid-10 {
+            grid-column: 5/span 2;
+            background: url(img10.webp);
+            background-size: cover;
+            background-position: center;
+        }
+
+        h5:hover {
+            color: #FF8000;
+        }
+
+        .logo {
+            display: inline;
+            
+            
+        }
+        .logo i{
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+
+        <div class="grid-path">
+            <div class="grid-1 grid"></div>
+            <div class="grid-2 grid"></div>
+            <div class="grid-3 grid"></div>
+            <div class="grid-4 grid"></div>
+            <div class="grid-5 grid"></div>
+            <div class="grid-6 grid "></div>
+            <div class="grid-7 grid"></div>
+            <div class="grid-8 grid"></div>
+            <div class="grid-9 grid"></div>
+            <div class="grid-10 grid"></div>
+        </div>
+        <div class="sub">
+            <div>
+                <h3>SHUTTER</h3>
+            </div>
+            <div>
+                <h5>HOME</h5>
+            </div>
+            <div>
+                <h5>PHOTOS</h5>
+            </div>
+            <div>
+                <h5>BIO</h5>
+            </div>
+            <div>
+                <h5>BLOG</h5>
+            </div>
+            <div>
+                <h5>CONTACT</h5>
+            </div>
+            <div class="logo"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i></div>
+            <div class="logo"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></div>
+            <div class="logo"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+@media only screen and (max-width:375px) {
+    .main{
+        position: relative;
+    }
+    .section-1 {
+        display: flex;
+        flex-direction: column;
+    }
+    .header {
+        width: 100%;
+    }
+    .menu{
+        width: 100%;
+    }
+    .hero {
+        
+        width: 100%;
+        padding: 50px;
+    }
+    .white {
+        display: none;
+    }
+    .main-box{
+        position: absolute;
+        top: 480px;
+    }
+    .main-in {
+        width: 100%;
+        padding: 70px;
+    }
+    .extra{
+        position: absolute;
+        bottom:-69px;
+        width: 374px;
+        height: 20px;
+
+    }
+    .image{
+        width: 374px;
+        position: absolute;
+        top: 70px;
+        height: 20px;
+        
+
+        /* margin-top: 100px; */
+    }
+    
+}

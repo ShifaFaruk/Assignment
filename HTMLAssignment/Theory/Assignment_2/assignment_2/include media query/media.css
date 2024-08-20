@@ -1,0 +1,73 @@
+@media only screen and (min-width:768px)and (max-width:768px) {
+    .main {
+        position: relative;
+    }
+
+    .section-1 {
+        flex-direction: column;
+        /* position: relative; */
+    }
+
+    .header {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .menu {
+        width: 100%;
+
+    }
+
+    .hero {
+        height: auto;
+        width: 100%;
+        background-color: #0000FF;
+        padding: 120px;
+    }
+
+    .menu {
+        position: absolute;
+        top: 336px;
+        width: 30%;
+        padding-top: 210px;
+        padding-bottom: 210px;
+    }
+
+    .white {
+        display: none;
+    }
+
+    .main-in {
+        margin-left: 230px;
+        width: 70%;
+    }
+
+    .main-box {
+        position: absolute;
+        border: 1px solid red;
+        /* display: none; */
+        bottom: 0;
+    }
+
+    .image {
+        position: absolute;
+        height: 103px;
+        left: 576px;
+
+    }
+
+    .extra {
+        position: absolute;
+        left: 230px;
+        height: 103px;
+        width: 350px;
+
+
+    }
+
+    .banner {
+        width: 70%;
+        margin-left: 230px;
+    }
+}
+
