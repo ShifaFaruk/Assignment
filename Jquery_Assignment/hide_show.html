@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=F, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: aqua;
+        }
+
+        h1 {
+            height: auto;
+            width: 500px;
+            background-color: white;
+            color: aqua;
+            display: inline;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .sub {
+            height: auto;
+            width: 230px;
+            background-color: white;
+            margin: 10px;
+        }
+
+        p {
+            border: 1px solid aqua;
+            padding: 10px;
+        }
+
+        input {
+            border: 1px solid aqua;
+            height: 25px;
+        }
+
+        button {
+            color: aqua;
+            background-color: white;
+            height: 25px;
+            border: none;
+            margin-left: -20;
+        }
+
+        .sub1 {
+            height: auto;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 100px;
+        }
+
+        .main {
+            height: 100vh;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="sub1">
+            <h1>
+                Show And Hide Password
+            </h1>
+            <div>
+                <div class="sub">
+                    <p><input type="password" name="password" id="password">
+                        <button class="hide">
+                            Hide
+                        </button>
+                        <button id="togglePassword">Show</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+           $('#togglePassword').on('click', function () {
+            const passwordInput = $('#password')
+            const passwordType = passwordInput.attr('type') === 'password' ? 'text' : 'password';
+            passwordInput.attr('type', passwordType);
+            $(this).text(passwordType === 'password'?'show':'Hide');
+           })
+        })
+    </script>
+</body>
+
+</html>

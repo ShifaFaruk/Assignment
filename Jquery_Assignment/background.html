@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: blueviolet;
+            
+        }
+        .main{
+            height: 100vh;
+            width: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .main > div{
+            height: 200px;
+            width: 100px;
+            border: 1px solid black;
+        }
+        .sub1{
+            background-color: red;
+        }
+        .sub2{
+            background-color: aqua;
+        }
+        .sub3{
+            background-color: tomato;
+        }
+        .sub4{
+            background-color: blue;
+        }
+        .sub5{
+            background-color: brown;
+        }
+        .sub6{
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="sub1"></div>
+        <div class="sub2"></div>
+        <div class="sub3"></div>
+        <div class="sub4"></div>
+        <div class="sub5"></div>
+        <div class="sub6"></div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function(){
+        $('.sub1').click(function(){
+            $('.main').css("background-color","red")
+        })
+    })
+    $(document).ready(function(){
+        $('.sub2').click(function(){
+            $('.main').css("background-color","aqua")
+        })
+    })
+    $(document).ready(function(){
+        $('.sub3').click(function(){
+            $('.main').css("background-color","tomato")
+        })
+    })
+    $(document).ready(function(){
+        $('.sub4').click(function(){
+            $('.main').css("background-color","blue")
+        })
+    })
+    $(document).ready(function(){
+        $('.sub5').click(function(){
+            $('.main').css("background-color","brown")
+        })
+    })
+    $(document).ready(function(){
+        $('.sub6').click(function(){
+            $('.main').css("background-color","chartreuse")
+        })
+    })
+</script>
+</html>

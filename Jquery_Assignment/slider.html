@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(2, 22, 40);
+        }
+
+        .sub {
+            height: 500px;
+            width: auto;
+            background-color: yellowgreen;
+            margin-top: 100px;
+            margin-left: 50px;
+            margin-right: 50px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            color: rgb(2, 22, 40);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .head {
+            height: auto;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button {
+            height: auto;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            margin-top: 25px;
+        }
+
+        button {
+            background-color: yellowgreen;
+            color: rgb(2, 22, 40);
+            padding: 10px;
+            border-radius: 30px;
+            padding: 10px;
+        }
+
+        .button>button:hover {
+            background-color: wheat;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="sub">
+            <div class="head">
+                <h1 class="head1">Slide Toggle / </h1>
+                <h1 class="head2">SlideUp / </h1>
+                <h1 class="head3/">SlideDown</h1>
+            </div>
+
+            <p>Pure Javascript</p>
+        </div>
+        <div class="button">
+            <button class="b1">SlideUp</button>
+            <button class="b2">SlideDown</button>
+            <button class="b3">SlideToggle</button>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.b1').click(function () {
+            $('.sub').slideUp(3000)
+        })
+    })
+    $(document).ready(function () {
+        $('.b2').click(function () {
+            $('.sub').slideDown(3000)
+        })
+    })
+    $(document).ready(function () {
+        $('.b3').click(function () {
+            $('.sub').slideToggle(3000)
+        })
+    })
+</script>
+
+</html>
