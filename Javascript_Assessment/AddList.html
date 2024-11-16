@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .main {
+            height: 400px;
+            width: 400px;
+            border: 2px solid red;
+            background-color: black;
+        }
+
+        li {
+            color: white;
+        }
+        button{
+            font-size: 15px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <input type="text" id="todoInput" placeholder="add new">
+        <button id="addBtn">Add</button>
+
+        <ul id="todoList">
+            <li>Read a book</li>
+            <li>Lunch with Caro</li>
+            <li>Feed the dog</li>
+        </ul>
+    </div>
+</body>
+<script>
+
+    const todoInput = document.getElementById('todoInput');
+    const addBtn = document.getElementById('addBtn');
+    const todoList = document.getElementById('todoList');
+
+
+    function addTodo() {
+
+        const newTodo = todoInput.value.trim();
+
+        if (newTodo !== "") {
+
+            const listItem = document.createElement('li');
+
+
+            listItem.textContent = newTodo;
+
+
+            todoList.appendChild(listItem);
+
+
+            todoInput.value = "";
+
+
+            storeTodosInCookies();
+        }
+    }
+
+
+    addBtn.addEventListener('click', addTodo);
+
+
+    function storeTodosInCookies() {
+
+        const todos = [];
+        todoList.querySelectorAll('li').forEach(item => {
+            todos.push(item.textContent);
+        });
+
+
+        // document.cookie = todos=${JSON.stringify(todos)}; path=/;;
+    }
+
+
+    window.onload = function () {
+
+        const cookieString = document.cookie.split('; ').find(row => row.startsWith('todos='));
+        if (cookieString) {
+            const todos = JSON.parse(cookieString.split('=')[1]);
+
+
+            todos.forEach(todo => {
+                const listItem = document.createElement('li');
+                listItem.textContent = todo;
+                todoList.appendChild(listItem);
+            });
+        }
+    };
+
+</script>
+
+</html>
