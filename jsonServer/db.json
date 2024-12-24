@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "sds",
+      "age": "24",
+      "gender": "male"
+    },
+    {
+      "name": "faruk",
+      "age": "29",
+      "gender": "male",
+      "id": 2
+    },
+    {
+      "name": "sdads",
+      "age": "3",
+      "gender": "female",
+      "id": 3
+    }
+  ]
+}
