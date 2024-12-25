@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Picker and Difference</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Tempus Dominus CSS (for DateTime Picker) -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.0.0/dist/css/tempus-dominus.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2>Date Difference Calculator</h2>
+        <form>
+            <div class="mb-3">
+                <label for="startDate" class="form-label">Start Date:</label>
+                <div class="input-group" id="startDatePicker">
+                    <input type="text" class="form-control" id="startDate" />
+                    <span class="input-group-text">
+                        <i class="bi bi-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="endDate" class="form-label">End Date:</label>
+                <div class="input-group" id="endDatePicker">
+                    <input type="text" class="form-control" id="endDate" />
+                    <span class="input-group-text">
+                        <i class="bi bi-calendar"></i>
+                    </span>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="calculateBtn">Calculate Difference</button>
+        </form>
+
+        <h4 class="mt-4">Difference:</h4>
+        <p id="result"></p>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Tempus Dominus JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@eonasdan/tempus-dominus@6.0.0/dist/js/tempus-dominus.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+</body>
+
+</html>
+<script>
+    $(document).ready(function () {
+        // Initialize Tempus Dominus Date Pickers
+        new tempusDominus.TempusDominus(document.getElementById('startDatePicker'), {
+            display: {
+                components: {
+                    calendar: true,
+                    date: true,
+                    month: true,
+                    year: true,
+                    clock: false,
+                },
+            },
+        });
+
+        new tempusDominus.TempusDominus(document.getElementById('endDatePicker'), {
+            display: {
+                components: {
+                    calendar: true,
+                    date: true,
+                    month: true,
+                    year: true,
+                    clock: false,
+                },
+            },
+        });
+
+        // Calculate Difference
+        $('#calculateBtn').on('click', function () {
+            const startDate = moment($('#startDate').val(), 'MM/DD/YYYY');
+            const endDate = moment($('#endDate').val(), 'MM/DD/YYYY');
+
+            if (!startDate.isValid() || !endDate.isValid()) {
+                $('#result').text('Please select valid dates.');
+                return;
+            }
+
+            const diffYears = endDate.diff(startDate, 'years');
+            startDate.add(diffYears, 'years');
+
+            const diffMonths = endDate.diff(startDate, 'months');
+            startDate.add(diffMonths, 'months');
+
+            const diffDays = endDate.diff(startDate, 'days');
+
+            $('#result').text(`${diffYears} years, ${diffMonths} months, and ${diffDays} days`);
+        });
+    });
+
+</script>
