@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let str1 = '{[)]'
+
+    let data = {
+      '{': '}',
+      '<': '>',
+      '(': ')',
+      '[': ']'
+    }
+
+
+    const CompareBracket = (str1) => {
+      for (let i = 0; i < str1.length; i++) {
+        for (let j = str1.length - 1; j < str1.length; j--) {
+          for (const [key, value] of Object.entries(data)) {
+            if (str1[i].includes(key) && str1[j].includes(value)) {
+              if (str1[i] == str1.length) {
+                document.write('true')
+              }
+            }
+            else {
+              document.write('true')
+            }
+          }
+
+        }
+      }
+    }
+
+    document.write("Answer is ", + CompareBracket(str1))
+  </script>
+</body>
+
+</html>
