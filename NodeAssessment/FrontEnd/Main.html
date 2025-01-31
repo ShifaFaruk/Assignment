@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+</head>
+<body>
+    <h2>Real-Time Chat</h2>
+    <div id="chat-box"></div>
+    <input type="text" id="username" placeholder="Your Name">
+    <input type="text" id="message" placeholder="Type a message">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        const socket = io("http://localhost:5000");
+
+        socket.on("chatHistory", (messages) => {
+            const chatBox = document.getElementById("chat-box");
+            chatBox.innerHTML = messages.map(msg => `<p><b>${msg.username}:</b> ${msg.message}</p>`).join("");
+        });
+
+        socket.on("receiveMessage", (data) => {
+            const chatBox = document.getElementById("chat-box");
+            chatBox.innerHTML += `<p><b>${data.username}:</b> ${data.message}</p>`;
+        });
+
+        function sendMessage() {
+            const username = document.getElementById("username").value;
+            const message = document.getElementById("message").value;
+            socket.emit("sendMessage", { username, message });
+            document.getElementById("message").value = "";
+        }
+    </script>
+</body>
+</html>
